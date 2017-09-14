@@ -53,7 +53,7 @@ class SimpleSerial_serial(SimpleSerialTemplate):
         pass
 
     def hardware_write(self, string):
-        return self.ser.write(bytearray(string.encode('utf-8')))
+        return self.ser.write(bytearray(string))
 
     def hardware_read(self, num, timeout=100):
         return self.ser.read(num)
