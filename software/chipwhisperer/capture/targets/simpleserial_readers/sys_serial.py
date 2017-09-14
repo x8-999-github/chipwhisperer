@@ -59,7 +59,9 @@ class SimpleSerial_serial(SimpleSerialTemplate):
         return self.ser.read(num)
 
     def hardware_inWaiting(self):
-        return self.ser.in_waiting
+        if self.ser == None:
+            return False
+        return self.ser.inWaiting()
 
     def close(self):
         if self.ser is not None:
